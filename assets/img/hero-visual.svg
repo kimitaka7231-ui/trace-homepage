@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none">
+  <rect width="1200" height="700" fill="#0d0d0d"/>
+  <rect x="0" y="340" width="1200" height="1" fill="rgba(255,255,255,0.06)"/>
+  <rect x="600" y="0" width="1" height="700" fill="rgba(255,255,255,0.06)"/>
+  <ellipse cx="600" cy="350" rx="300" ry="200" fill="rgba(200,230,53,0.05)"/>
+  <text x="600" y="360" text-anchor="middle" font-family="sans-serif" font-size="14" fill="rgba(245,245,245,0.2)" letter-spacing="6">�����o</text>
+</svg>

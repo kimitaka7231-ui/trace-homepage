@@ -1,0 +1,7 @@
+{
+  "name": "trace-homepage",
+  "private": true,
+  "scripts": {
+    "dev": "powershell -ExecutionPolicy Bypass -File ./start-server.ps1"
+  }
+}
