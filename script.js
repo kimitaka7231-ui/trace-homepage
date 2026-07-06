@@ -267,6 +267,18 @@
     scrollToHash(window.location.hash, 8);
   }
 
+  function initFaqPathScroll() {
+    var path = window.location.pathname.replace(/\/$/, '');
+    if (path !== '/faq') return;
+
+    window.scrollTo(0, 0);
+    scrollToHash('#faq', 10);
+
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', '/#faq');
+    }
+  }
+
   function initFaqAccordion() {
     var items = document.querySelectorAll('.faq-item');
 
@@ -295,6 +307,7 @@
     initActiveNav();
     initSmoothAnchor();
     initHashScroll();
+    initFaqPathScroll();
     initFaqAccordion();
 
     window.addEventListener('hashchange', function () {
@@ -302,6 +315,7 @@
     });
 
     window.addEventListener('load', function () {
+      initFaqPathScroll();
       if (window.location.hash) {
         scrollToHash(window.location.hash, 5);
       }

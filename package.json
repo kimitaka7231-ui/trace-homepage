@@ -2,6 +2,8 @@
   "name": "trace-homepage",
   "private": true,
   "scripts": {
-    "dev": "powershell -ExecutionPolicy Bypass -File ./start-server.ps1"
+    "dev": "powershell -ExecutionPolicy Bypass -File ./start-server.ps1",
+    "build": "powershell -ExecutionPolicy Bypass -File ./tools/validate-build.ps1",
+    "verify": "powershell -ExecutionPolicy Bypass -File ./tools/verify-server.ps1"
   }
 }
