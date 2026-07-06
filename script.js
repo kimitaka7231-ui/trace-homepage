@@ -162,7 +162,7 @@
 
   function initStaggerReveal() {
     var groups = document.querySelectorAll(
-      '.feature__grid, .flow__steps, .program__grid, .result__grid, .equipment__grid, .price__grid, .voice__grid'
+      '.feature__grid, .flow__steps, .program__grid, .result__grid, .equipment__grid, .price__grid, .voice__grid, .faq__list'
     );
 
     groups.forEach(function (group) {
@@ -206,23 +206,80 @@
     });
   }
 
+  function getHashTarget(hash) {
+    if (!hash || hash === '#') return null;
+
+    var id = hash.charAt(0) === '#' ? hash.slice(1) : hash;
+    return document.getElementById(id);
+  }
+
+  function scrollToTarget(target) {
+    if (!target) return;
+
+    var headerOffset = header ? header.offsetHeight : 0;
+    var targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: Math.max(0, targetPosition),
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+  }
+
+  function scrollToHash(hash, retries) {
+    var target = getHashTarget(hash);
+    if (!target) {
+      if (retries > 0) {
+        window.setTimeout(function () {
+          scrollToHash(hash, retries - 1);
+        }, 150);
+      }
+      return;
+    }
+
+    scrollToTarget(target);
+  }
+
   function initSmoothAnchor() {
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
       anchor.addEventListener('click', function (event) {
         var targetId = anchor.getAttribute('href');
-        if (!targetId || targetId === '#') return;
-
-        var target = document.querySelector(targetId);
+        var target = getHashTarget(targetId);
         if (!target) return;
 
         event.preventDefault();
-        var headerOffset = header ? header.offsetHeight : 0;
-        var targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+        if (targetId && targetId !== '#') {
+          history.pushState(null, '', targetId);
+        }
+        scrollToTarget(target);
+        closeMenu();
+      });
+    });
+  }
 
-        window.scrollTo({
-          top: targetPosition,
-          behavior: prefersReducedMotion ? 'auto' : 'smooth'
-        });
+  function initHashScroll() {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    if (!window.location.hash) return;
+
+    window.scrollTo(0, 0);
+    scrollToHash(window.location.hash, 8);
+  }
+
+  function initFaqAccordion() {
+    var items = document.querySelectorAll('.faq-item');
+
+    items.forEach(function (item) {
+      var trigger = item.querySelector('.faq-item__trigger');
+      var panel = item.querySelector('.faq-item__panel');
+
+      if (!trigger || !panel) return;
+
+      trigger.addEventListener('click', function () {
+        var isOpen = item.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
       });
     });
   }
@@ -237,6 +294,18 @@
     initScrollReveal();
     initActiveNav();
     initSmoothAnchor();
+    initHashScroll();
+    initFaqAccordion();
+
+    window.addEventListener('hashchange', function () {
+      scrollToHash(window.location.hash, 3);
+    });
+
+    window.addEventListener('load', function () {
+      if (window.location.hash) {
+        scrollToHash(window.location.hash, 5);
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
