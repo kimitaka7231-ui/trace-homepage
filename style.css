@@ -1535,11 +1535,14 @@ ol { list-style: none; }
 
 .faq-item__question {
   flex: 1;
+  min-width: 0;
   font-family: var(--font-display);
   font-size: clamp(1.125rem, 2.6vw, 1.25rem);
   font-weight: 600;
   line-height: 1.55;
   letter-spacing: 0.03em;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .faq-item__icon {
@@ -1623,6 +1626,8 @@ ol { list-style: none; }
   color: var(--color-text-muted);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 1.25rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .faq-item.is-open .faq-item__answer {
