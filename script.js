@@ -282,20 +282,32 @@
   function initFaqAccordion() {
     var items = document.querySelectorAll('.faq-item');
 
-    items.forEach(function (item) {
+    function setOpenState(item, isOpen) {
       var trigger = item.querySelector('.faq-item__trigger');
       var panel = item.querySelector('.faq-item__panel');
-
       if (!trigger || !panel) return;
 
-      function setOpenState(isOpen) {
-        item.classList.toggle('is-open', isOpen);
-        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-      }
+      item.classList.toggle('is-open', isOpen);
+      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    }
+
+    function closeAll() {
+      items.forEach(function (item) {
+        setOpenState(item, false);
+      });
+    }
+
+    items.forEach(function (item) {
+      var trigger = item.querySelector('.faq-item__trigger');
+      if (!trigger) return;
 
       trigger.addEventListener('click', function () {
-        setOpenState(!item.classList.contains('is-open'));
+        var isOpen = item.classList.contains('is-open');
+        closeAll();
+        if (!isOpen) {
+          setOpenState(item, true);
+        }
       });
     });
   }
