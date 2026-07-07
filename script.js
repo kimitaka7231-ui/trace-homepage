@@ -288,10 +288,14 @@
 
       if (!trigger || !panel) return;
 
-      trigger.addEventListener('click', function () {
-        var isOpen = item.classList.toggle('is-open');
+      function setOpenState(isOpen) {
+        item.classList.toggle('is-open', isOpen);
         trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      }
+
+      trigger.addEventListener('click', function () {
+        setOpenState(!item.classList.contains('is-open'));
       });
     });
   }
