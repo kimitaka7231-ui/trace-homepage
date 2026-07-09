@@ -1156,11 +1156,19 @@ ol { list-style: none; }
 }
 
 .result-card__title {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  margin-bottom: 0.875rem;
+  margin-bottom: 0.75rem;
   color: var(--color-accent);
+}
+
+.result-card__desc {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  letter-spacing: 0.02em;
 }
 
 /* --- Voice (お客様の声) --- */
