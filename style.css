@@ -770,8 +770,8 @@ ol { list-style: none; }
 }
 
 .photo--hero .photo__img {
-  object-position: 62% 24%;
-  transform: scale(1.08);
+  object-position: 46% 28%;
+  transform: scale(1.06);
   filter: brightness(0.98) contrast(1.04) saturate(0.94);
 }
 
@@ -821,21 +821,22 @@ ol { list-style: none; }
   background-color: #f5f5f5;
 }
 
-.photo__img--interior { object-position: 52% 36%; }
-.photo__img--trainer { object-position: 45% 24%; }
-.photo__img--equipment { object-position: 48% 30%; }
-.photo__img--equipment-alt { object-position: 50% 26%; }
-.photo__img--storefront { object-position: center center; }
+.photo__img--interior { object-position: 50% 38%; }
+.photo__img--trainer { object-position: 50% 22%; }
+.photo__img--equipment { object-position: 46% 34%; }
+.photo__img--equipment-alt { object-position: 56% 42%; }
+.photo__img--storefront { object-position: 50% 38%; }
 
 @media (max-width: 767px) {
   .photo--hero .photo__img {
-    object-position: 58% 24%;
+    object-position: 38% 26%;
   }
 
-  .photo__img--interior { object-position: 56% 32%; }
-  .photo__img--equipment { object-position: 50% 26%; }
-  .photo__img--equipment-alt { object-position: 50% 22%; }
-  .photo__img--trainer { object-position: 48% 20%; }
+  .photo__img--interior { object-position: 50% 36%; }
+  .photo__img--equipment { object-position: 46% 32%; }
+  .photo__img--equipment-alt { object-position: 56% 40%; }
+  .photo__img--trainer { object-position: 50% 20%; }
+  .photo__img--storefront { object-position: 50% 36%; }
 
   .btn {
     min-height: 3rem;
@@ -2283,7 +2284,7 @@ ol { list-style: none; }
   }
 
   .photo--hero .photo__img {
-    object-position: 64% 22%;
+    object-position: 46% 28%;
   }
 
   .hero {

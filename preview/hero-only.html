@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hero Preview — TRACE</title>
+  <link rel="stylesheet" href="../style.css?v=20260726">
+  <style>
+    body.page-top { margin: 0; }
+    .hero__inner .reveal { opacity: 1; transform: none; }
+  </style>
+</head>
+<body class="page-top">
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a class="header__logo" href="#" aria-label="パーソナルジム TRACE ホーム">
+        <img class="header__logo-img" src="../assets/img/logo.svg" width="120" height="30" alt="パーソナルジム TRACE">
+      </a>
+      <a class="header__reserve btn btn--line btn--sm" href="#">
+        <img class="btn__icon" src="../assets/icons/icon-line.svg" width="18" height="18" alt="" aria-hidden="true">
+        <span>予約</span>
+      </a>
+      <button class="header__menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false">
+        <span class="header__menu-line"></span>
+        <span class="header__menu-line"></span>
+      </button>
+      <nav class="nav" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#">コンセプト</a></li>
+          <li><a class="nav__link" href="#">特徴</a></li>
+          <li><a class="nav__link" href="#">プログラム</a></li>
+          <li><a class="nav__link" href="#">トレーナー</a></li>
+          <li><a class="nav__link" href="#">変化</a></li>
+          <li><a class="nav__link" href="#">料金</a></li>
+          <li><a class="nav__link" href="#">よくある質問</a></li>
+          <li><a class="nav__link" href="#">アクセス</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-label="メインビジュアル">
+      <div class="hero__bg" aria-hidden="true">
+        <figure class="photo photo--hero">
+          <img class="photo__img photo__img--hero" id="heroImg" src="hero-compare-counseling.webp" alt="" width="1024" height="768" decoding="async">
+        </figure>
+        <div class="hero__gradient"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="hero__inner">
+        <p class="hero__location reveal">佐賀市のパーソナルジム</p>
+        <p class="hero__eyebrow reveal">TRACE · 神野西</p>
+        <h1 class="hero__title reveal">
+          <span class="hero__title-line">続けられる人を</span>
+          <span class="hero__title-line hero__title-line--accent">作る。</span>
+        </h1>
+        <p class="hero__lead reveal">無理なく続く習慣を、一人ひとりに。</p>
+        <p class="hero__trial reveal">
+          <span class="hero__trial-label">初回体験</span>
+          <span class="hero__trial-price">¥3,300</span>
+          <span class="hero__trial-tax">（税込）</span>
+        </p>
+        <div class="hero__cta reveal">
+          <a class="btn btn--line btn--lg btn--block" href="#">
+            <img class="btn__icon" src="../assets/icons/icon-line.svg" width="22" height="22" alt="" aria-hidden="true">
+            <span>体験を予約する</span>
+          </a>
+          <a class="btn btn--outline btn--lg btn--block" href="#">
+            <img class="btn__icon" src="../assets/icons/icon-line.svg" width="20" height="20" alt="" aria-hidden="true">
+            <span>公式LINEで相談</span>
+          </a>
+        </div>
+        <ul class="hero__audience reveal" aria-label="こんな方におすすめ">
+          <li>運動初心者歓迎</li>
+          <li>ダイエット</li>
+          <li>ボディメイク</li>
+          <li>リバウンド経験者歓迎</li>
+        </ul>
+        <ul class="hero__trust reveal" aria-label="特徴">
+          <li>完全個室</li>
+          <li>マンツーマン</li>
+        </ul>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-label">スクロール</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+  </main>
+  <script>
+    var p = new URLSearchParams(location.search);
+    var img = p.get('img');
+    if (img) document.getElementById('heroImg').src = img;
+  </script>
+</body>
+</html>
