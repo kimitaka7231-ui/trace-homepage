@@ -150,21 +150,21 @@ function Export-Photo($job) {
 $jobs = @(
     @{ Token = 'inbody_______1_'; Out = 'hero-gym.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.48; Zoom = 1.08 }
     @{ Token = '________-76834'; Out = 'interior.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.42; Zoom = 1.10 }
-    @{ Token = '___-b8bcd262'; Out = 'equipment.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.46; Zoom = 1.0 }
-    @{ Token = '_____-4bbe090d'; Out = 'studio-02.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.50; Zoom = 1.0 }
+    @{ Token = '___-b8bcd262'; Out = 'equipment.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.48; Zoom = 1.0 }
+    @{ Token = '____-33cf4818'; Out = 'studio-02.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.46; Zoom = 1.0 }
     @{ Token = '_______-c05cd149'; Out = 'program-01.webp'; W = 1024; H = 768; FocusX = 0.46; FocusY = 0.36; Zoom = 1.12 }
     @{ Token = '______-dc7e7c65'; Out = 'program-02.webp'; W = 1024; H = 768; FocusX = 0.48; FocusY = 0.38; Zoom = 1.10 }
     @{ Token = '_______-ec3dff90'; Out = 'program-03.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.40; Zoom = 1.10 }
     @{ Token = '__________2_-72eca'; Out = 'program-04.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.38; Zoom = 1.08 }
-    @{ Token = '__________1_-7b4f5'; Out = 'trainer-profile.webp'; W = 1024; H = 824; FocusX = 0.50; FocusY = 0.32; Zoom = 1.12 }
-    @{ Token = '___-793792f0'; Out = 'storefront.webp'; W = 800; H = 1000; FocusX = 0.50; FocusY = 0.44; Zoom = 1.0 }
+    @{ Token = '__________1_-7b4f5'; Out = 'trainer-profile.webp'; W = 1024; H = 824; FocusX = 0.56; FocusY = 0.46; Zoom = 1.0 }
+    @{ Token = '___-793792f0'; Out = 'storefront.webp'; W = 800; H = 1000; FocusX = 0.50; FocusY = 0.54; Zoom = 1.0 }
 )
 
 foreach ($job in $jobs) { Export-Photo $job }
 
 # ヒーロー比較用（カウンセリング B/C → preview のみ）
-$previewDir = Join-Path $script:TraceRoot 'preview'
-New-Item -ItemType Directory -Force -Path $previewDir | Out-Null
+$previewDir = Join-Path (Split-Path $PSScriptRoot -Parent) 'preview'
+if (-not (Test-Path $previewDir)) { New-Item -ItemType Directory -Force -Path $previewDir | Out-Null }
 $heroCompareJobs = @(
     @{ Token = 'inbody_______2_'; Out = 'hero-compare-b.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.44; Zoom = 1.12 }
     @{ Token = '________-ae73dfbe'; Out = 'hero-compare-c.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.44; Zoom = 1.12 }

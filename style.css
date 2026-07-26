@@ -822,14 +822,14 @@ ol { list-style: none; }
 }
 
 .photo__img--interior { object-position: 50% 38%; }
-.photo__img--trainer { object-position: 50% 28%; }
-.photo__img--equipment { object-position: 50% 46%; }
-.photo__img--equipment-alt { object-position: 52% 50%; }
+.photo__img--trainer { object-position: 50% 42%; }
+.photo__img--equipment { object-position: 50% 48%; }
+.photo__img--equipment-alt { object-position: 50% 44%; }
 .photo__img--program-01 { object-position: 46% 36%; }
 .photo__img--program-02 { object-position: 48% 38%; }
 .photo__img--program-03 { object-position: 50% 40%; }
 .photo__img--program-04 { object-position: 50% 38%; }
-.photo__img--storefront { object-position: 50% 44%; }
+.photo__img--storefront { object-position: 50% 50%; }
 
 @media (max-width: 767px) {
   .photo--hero .photo__img {
@@ -837,10 +837,10 @@ ol { list-style: none; }
   }
 
   .photo__img--interior { object-position: 50% 36%; }
-  .photo__img--equipment { object-position: 50% 44%; }
-  .photo__img--equipment-alt { object-position: 52% 48%; }
-  .photo__img--trainer { object-position: 50% 26%; }
-  .photo__img--storefront { object-position: 50% 36%; }
+  .photo__img--equipment { object-position: 50% 46%; }
+  .photo__img--equipment-alt { object-position: 50% 42%; }
+  .photo__img--trainer { object-position: 50% 40%; }
+  .photo__img--storefront { object-position: 50% 48%; }
 
   .btn {
     min-height: 3rem;

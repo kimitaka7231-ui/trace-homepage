@@ -27,7 +27,7 @@ $checks = @(
   'faq__cta',
   'faq-item__icon',
   'href="#faq"',
-  'style.css?v=202607261',
+  'style.css?v=202607262',
   'script.js?v=20260708',
   'id="faq-q9"',
   'id="faq-a9"'
