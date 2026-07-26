@@ -150,35 +150,19 @@ function Export-Photo($job) {
 $jobs = @(
     @{ Token = 'inbody_______1_'; Out = 'hero-gym.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.48; Zoom = 1.08 }
     @{ Token = '________-76834'; Out = 'interior.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.42; Zoom = 1.10 }
+    # ③ equipment-main = ジム全景（人物なし）
     @{ Token = '___-b8bcd262'; Out = 'equipment.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.48; Zoom = 1.0 }
     @{ Token = '____-33cf4818'; Out = 'studio-02.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.46; Zoom = 1.0 }
     @{ Token = '_______-c05cd149'; Out = 'program-01.webp'; W = 1024; H = 768; FocusX = 0.46; FocusY = 0.36; Zoom = 1.12 }
     @{ Token = '______-dc7e7c65'; Out = 'program-02.webp'; W = 1024; H = 768; FocusX = 0.48; FocusY = 0.38; Zoom = 1.10 }
     @{ Token = '_______-ec3dff90'; Out = 'program-03.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.40; Zoom = 1.10 }
     @{ Token = '__________2_-72eca'; Out = 'program-04.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.38; Zoom = 1.08 }
-    @{ Token = 'images_15-6c7479f6'; Out = 'trainer-profile.webp'; W = 1024; H = 824; FocusX = 0.50; FocusY = 0.44; Zoom = 0.96 }
+    # ⑨ trainer = ジム内・マシン前・立ち姿（images_15）
+    @{ Token = 'images_15-6c7479f6'; Out = 'trainer-profile.webp'; W = 1024; H = 824; FocusX = 0.50; FocusY = 0.50; Zoom = 0.82 }
+    # ⑩ access = 店舗外観・入口・駐車場（人物なし）
     @{ Token = '___-793792f0'; Out = 'storefront.webp'; W = 800; H = 1000; FocusX = 0.50; FocusY = 0.52; Zoom = 1.0 }
 )
 
 foreach ($job in $jobs) { Export-Photo $job }
-
-# ヒーロー比較用（カウンセリング B/C → preview のみ）
-$previewDir = Join-Path (Split-Path $PSScriptRoot -Parent) 'preview'
-if (-not (Test-Path $previewDir)) { New-Item -ItemType Directory -Force -Path $previewDir | Out-Null }
-$heroCompareJobs = @(
-    @{ Token = 'inbody_______2_'; Out = 'hero-compare-b.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.44; Zoom = 1.12 }
-    @{ Token = '________-ae73dfbe'; Out = 'hero-compare-c.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.44; Zoom = 1.12 }
-)
-foreach ($job in $heroCompareJobs) {
-    $src = Find-Source $job.Token
-    $png = Join-Path $previewDir ($job.Out -replace '\.webp$', '.png')
-    $webp = Join-Path $previewDir $job.Out
-    $zoom = if ($job.Zoom) { $job.Zoom } else { 1.0 }
-    Write-Host "preview/$($job.Out) <- $(Split-Path $src -Leaf)"
-    [PhotoPrep]::FocusCropResize($src, $png, $job.W, $job.H, $job.FocusX, $job.FocusY, $zoom)
-    [PhotoPrep]::NormalizeTone($png)
-    $info = Convert-ToWebP $png $webp
-    Write-Host "  -> $($job.W)x$($job.H) $($info.KB)KB"
-}
 
 Write-Host 'Done'
