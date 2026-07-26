@@ -833,7 +833,7 @@ ol { list-style: none; }
 
 @media (max-width: 767px) {
   .photo--hero .photo__img {
-    object-position: 38% 26%;
+    object-position: 44% 12%;
   }
 
   .photo__img--interior { object-position: 50% 36%; }
@@ -2562,7 +2562,7 @@ ol { list-style: none; }
   letter-spacing: 0.16em;
 }
 
-/* モバイルFV：CTAカードを下げ、人物の顔と重ならないようにする */
+/* モバイルFV：CTAカードを画面下部に固定し、人物の顔と重ならないようにする */
 @media (max-width: 767px) {
   .hero {
     justify-content: flex-start;
@@ -2571,11 +2571,10 @@ ol { list-style: none; }
   }
 
   .hero__inner {
-    display: flex;
-    flex-direction: column;
     flex: 1;
     width: 100%;
     min-height: 0;
+    position: static;
   }
 
   .hero__lead {
@@ -2583,10 +2582,14 @@ ol { list-style: none; }
   }
 
   .hero__reserve {
-    margin-top: auto;
-    width: 100%;
+    position: absolute;
+    left: calc(var(--container-padding) + var(--safe-left));
+    right: auto;
+    bottom: calc(4.25rem + var(--safe-bottom));
+    width: min(20rem, calc(100% - var(--container-padding) * 2 - var(--safe-left) - var(--safe-right)));
     max-width: 20rem;
-    padding-top: 0.25rem;
+    margin-top: 0;
+    z-index: 4;
   }
 
   .hero__scroll {
