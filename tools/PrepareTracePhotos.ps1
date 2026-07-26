@@ -1,15 +1,14 @@
-# TRACE 宣材写真 — 焦点クロップ・トーン統一・WebP最適化
+# TRACE 宣材写真 — 焦点クロップ・トーン統一・WebP最適化（2026-07-26）
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 
-$root = Split-Path $PSScriptRoot -Parent
+$script:TraceRoot = Split-Path $PSScriptRoot -Parent
 $srcDir = 'C:\Users\kimit\.cursor\projects\c-Users-kimit-OneDrive-TRACE\assets'
-$outDir = Join-Path $root 'assets\img'
-$previewDir = Join-Path $root 'preview'
+$outDir = Join-Path $script:TraceRoot 'assets\img'
 $cwebp = Join-Path $PSScriptRoot 'libwebp\libwebp-1.4.0-windows-x64\bin\cwebp.exe'
 if (-not (Test-Path $cwebp)) { throw "cwebp not found: $cwebp" }
 
-New-Item -ItemType Directory -Force -Path $outDir, $previewDir | Out-Null
+New-Item -ItemType Directory -Force -Path $outDir | Out-Null
 
 function Find-Source([string]$token) {
     $f = Get-ChildItem $srcDir -Filter '*.png' | Where-Object { $_.Name -like "*$token*" } | Select-Object -First 1
@@ -131,7 +130,7 @@ function Convert-ToWebP([string]$pngPath, [string]$webpPath, [int]$targetKB = 28
         if ($LASTEXITCODE -ne 0) { throw "cwebp failed for $pngPath" }
     }
     $kb = (Get-Item $webpPath).Length / 1KB
-    return [PSCustomObject]@{ Quality = 'size'; KB = [math]::Round($kb, 1) }
+    return [PSCustomObject]@{ KB = [math]::Round($kb, 1) }
 }
 
 function Export-Photo($job) {
@@ -139,50 +138,47 @@ function Export-Photo($job) {
     $png = Join-Path $outDir ($job.Out -replace '\.webp$', '.png')
     $webp = Join-Path $outDir $job.Out
     $zoom = if ($job.Zoom) { $job.Zoom } else { 1.0 }
-    Write-Host "$($job.Out) <- $($job.Token) focus=$($job.FocusX),$($job.FocusY) zoom=$zoom"
+    Write-Host "$($job.Out) <- $(Split-Path $src -Leaf)"
     [PhotoPrep]::FocusCropResize($src, $png, $job.W, $job.H, $job.FocusX, $job.FocusY, $zoom)
     [PhotoPrep]::NormalizeTone($png)
     $info = Convert-ToWebP $png $webp
-    Write-Host "  -> $($job.W)x$($job.H) q=$($info.Quality) $($info.KB)KB"
+    Write-Host "  -> $($job.W)x$($job.H) $($info.KB)KB"
 }
 
+# ① hero  ② concept  ③ equipment-main  ④ equipment-sub
+# ⑤-⑧ program  ⑨ trainer  ⑩ access
 $jobs = @(
-    @{ Token = 'images_6-45528f6d'; Out = 'interior.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.40 }
-    @{ Token = 'images_5-36ac62e2'; Out = 'equipment.webp'; W = 1024; H = 768; FocusX = 0.46; FocusY = 0.36 }
-    @{ Token = 'images_12-b5feecd6'; Out = 'studio-02.webp'; W = 1024; H = 768; FocusX = 0.56; FocusY = 0.46 }
-    @{ Token = 'images_14-5b6f8cf1'; Out = 'trainer-profile.webp'; W = 1024; H = 824; FocusX = 0.50; FocusY = 0.26 }
-    @{ Token = 'images_15-6c7479f6'; Out = 'storefront.webp'; W = 800; H = 1000; FocusX = 0.50; FocusY = 0.40 }
+    @{ Token = 'inbody_______1_'; Out = 'hero-gym.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.48; Zoom = 1.08 }
+    @{ Token = '________-76834'; Out = 'interior.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.42; Zoom = 1.10 }
+    @{ Token = '___-b8bcd262'; Out = 'equipment.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.46; Zoom = 1.0 }
+    @{ Token = '_____-4bbe090d'; Out = 'studio-02.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.50; Zoom = 1.0 }
+    @{ Token = '_______-c05cd149'; Out = 'program-01.webp'; W = 1024; H = 768; FocusX = 0.46; FocusY = 0.36; Zoom = 1.12 }
+    @{ Token = '______-dc7e7c65'; Out = 'program-02.webp'; W = 1024; H = 768; FocusX = 0.48; FocusY = 0.38; Zoom = 1.10 }
+    @{ Token = '_______-ec3dff90'; Out = 'program-03.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.40; Zoom = 1.10 }
+    @{ Token = '__________2_-72eca'; Out = 'program-04.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.38; Zoom = 1.08 }
+    @{ Token = '__________1_-7b4f5'; Out = 'trainer-profile.webp'; W = 1024; H = 824; FocusX = 0.50; FocusY = 0.32; Zoom = 1.12 }
+    @{ Token = '___-793792f0'; Out = 'storefront.webp'; W = 800; H = 1000; FocusX = 0.50; FocusY = 0.44; Zoom = 1.0 }
 )
 
 foreach ($job in $jobs) { Export-Photo $job }
 
-$heroCompare = @(
-    @{ Token = 'images_6-45528f6d'; Out = 'hero-compare-counseling.webp'; Label = 'Counseling'; FocusX = 0.52; FocusY = 0.44; Zoom = 1.12 }
-    @{ Token = 'images_10-7a4c6c9e'; Out = 'hero-compare-bench.webp'; Label = 'Bench press'; FocusX = 0.46; FocusY = 0.36; Zoom = 1.18 }
-    @{ Token = 'images_9-dcf0898e'; Out = 'hero-compare-squat.webp'; Label = 'Squat'; FocusX = 0.50; FocusY = 0.42; Zoom = 1.15 }
-    @{ Token = 'images_4-9c0feffa'; Out = 'hero-compare-lat.webp'; Label = 'Lat pulldown'; FocusX = 0.40; FocusY = 0.38; Zoom = 1.22 }
+# ヒーロー比較用（カウンセリング B/C → preview のみ）
+$previewDir = Join-Path $script:TraceRoot 'preview'
+New-Item -ItemType Directory -Force -Path $previewDir | Out-Null
+$heroCompareJobs = @(
+    @{ Token = 'inbody_______2_'; Out = 'hero-compare-b.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.44; Zoom = 1.12 }
+    @{ Token = '________-ae73dfbe'; Out = 'hero-compare-c.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.44; Zoom = 1.12 }
 )
-
-foreach ($h in $heroCompare) {
-    $zoom = if ($h.Zoom) { $h.Zoom } else { 1.0 }
-    $job = @{ Token = $h.Token; Out = $h.Out; W = 1024; H = 768; FocusX = $h.FocusX; FocusY = $h.FocusY; Zoom = $zoom }
+foreach ($job in $heroCompareJobs) {
     $src = Find-Source $job.Token
-    $png = Join-Path $previewDir ($h.Out -replace '\.webp$', '.png')
-    $webp = Join-Path $previewDir $h.Out
-    [PhotoPrep]::FocusCropResize($src, $png, 1024, 768, $h.FocusX, $h.FocusY, $zoom)
+    $png = Join-Path $previewDir ($job.Out -replace '\.webp$', '.png')
+    $webp = Join-Path $previewDir $job.Out
+    $zoom = if ($job.Zoom) { $job.Zoom } else { 1.0 }
+    Write-Host "preview/$($job.Out) <- $(Split-Path $src -Leaf)"
+    [PhotoPrep]::FocusCropResize($src, $png, $job.W, $job.H, $job.FocusX, $job.FocusY, $zoom)
     [PhotoPrep]::NormalizeTone($png)
     $info = Convert-ToWebP $png $webp
-    Write-Host "preview/$($h.Out) q=$($info.Quality) $($info.KB)KB"
+    Write-Host "  -> $($job.W)x$($job.H) $($info.KB)KB"
 }
 
-# ヒーロー採用版（カウンセリング — 顔・アイコンタクト・指導が最も伝わる）
-$heroWinner = $heroCompare[0]
-$heroSrc = Find-Source $heroWinner.Token
-$heroPng = Join-Path $outDir 'hero-gym.png'
-$heroWebp = Join-Path $outDir 'hero-gym.webp'
-[PhotoPrep]::FocusCropResize($heroSrc, $heroPng, 1024, 768, $heroWinner.FocusX, $heroWinner.FocusY, $heroWinner.Zoom)
-[PhotoPrep]::NormalizeTone($heroPng)
-$heroInfo = Convert-ToWebP $heroPng $heroWebp
-Write-Host "assets/img/hero-gym.webp (hero winner: counseling) $($heroInfo.KB)KB"
-
-Write-Host "Done"
+Write-Host 'Done'
