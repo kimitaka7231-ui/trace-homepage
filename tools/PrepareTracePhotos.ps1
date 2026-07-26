@@ -156,8 +156,8 @@ $jobs = @(
     @{ Token = '______-dc7e7c65'; Out = 'program-02.webp'; W = 1024; H = 768; FocusX = 0.48; FocusY = 0.38; Zoom = 1.10 }
     @{ Token = '_______-ec3dff90'; Out = 'program-03.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.40; Zoom = 1.10 }
     @{ Token = '__________2_-72eca'; Out = 'program-04.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.38; Zoom = 1.08 }
-    @{ Token = '__________1_-7b4f5'; Out = 'trainer-profile.webp'; W = 1024; H = 824; FocusX = 0.56; FocusY = 0.46; Zoom = 1.0 }
-    @{ Token = '___-793792f0'; Out = 'storefront.webp'; W = 800; H = 1000; FocusX = 0.50; FocusY = 0.54; Zoom = 1.0 }
+    @{ Token = 'images_15-6c7479f6'; Out = 'trainer-profile.webp'; W = 1024; H = 824; FocusX = 0.50; FocusY = 0.44; Zoom = 0.96 }
+    @{ Token = '___-793792f0'; Out = 'storefront.webp'; W = 800; H = 1000; FocusX = 0.50; FocusY = 0.52; Zoom = 1.0 }
 )
 
 foreach ($job in $jobs) { Export-Photo $job }
