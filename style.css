@@ -833,7 +833,8 @@ ol { list-style: none; }
 
 @media (max-width: 767px) {
   .photo--hero .photo__img {
-    object-position: 44% 12%;
+    object-position: 68% 4%;
+    transform: scale(1);
   }
 
   .photo__img--interior { object-position: 50% 36%; }
@@ -2442,6 +2443,12 @@ ol { list-style: none; }
   filter: brightness(0.9) contrast(1.06) saturate(0.9);
 }
 
+@media (max-width: 767px) {
+  .photo--hero .photo__img {
+    transform: scale(1);
+  }
+}
+
 .hero__inner {
   max-width: 100%;
 }
@@ -2562,12 +2569,12 @@ ol { list-style: none; }
   letter-spacing: 0.16em;
 }
 
-/* モバイルFV：CTAカードを画面下部に固定し、人物の顔と重ならないようにする */
+/* モバイルFV：CTAを最下部に固定し、トレーナーの顔と完全に分離する */
 @media (max-width: 767px) {
   .hero {
     justify-content: flex-start;
     padding-top: calc(var(--header-height) + var(--safe-top) + clamp(9.5rem, 24vh, 11rem));
-    padding-bottom: calc(5rem + var(--safe-bottom));
+    padding-bottom: calc(3rem + var(--safe-bottom));
   }
 
   .hero__inner {
@@ -2585,7 +2592,7 @@ ol { list-style: none; }
     position: absolute;
     left: calc(var(--container-padding) + var(--safe-left));
     right: auto;
-    bottom: calc(4.25rem + var(--safe-bottom));
+    bottom: calc(1.75rem + var(--safe-bottom));
     width: min(20rem, calc(100% - var(--container-padding) * 2 - var(--safe-left) - var(--safe-right)));
     max-width: 20rem;
     margin-top: 0;
@@ -2593,7 +2600,7 @@ ol { list-style: none; }
   }
 
   .hero__scroll {
-    bottom: calc(1.25rem + var(--safe-bottom));
+    bottom: calc(0.625rem + var(--safe-bottom));
   }
 }
 
