@@ -150,25 +150,27 @@ function Export-Photo($job) {
 $allJobs = @(
     @{ Token = 'inbody_______1_'; Out = 'hero-gym.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.48; Zoom = 1.08 }
     @{ Token = '________-76834'; Out = 'interior.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.42; Zoom = 1.10 }
-    @{ Token = '___-b8bcd262'; Out = 'equipment.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.48; Zoom = 1.0 }
-    @{ Token = '____-33cf4818'; Out = 'studio-02.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.46; Zoom = 1.0 }
+    @{ Token = '___-b8bcd262'; Out = 'equipment.webp'; W = 768; H = 960; FocusX = 0.50; FocusY = 0.48; Zoom = 1.0 }
+    @{ Token = '____-c0fa8665'; Out = 'studio-02.webp'; W = 768; H = 960; FocusX = 0.50; FocusY = 0.50; Zoom = 1.0 }
     @{ Token = '_______-c05cd149'; Out = 'program-01.webp'; W = 1024; H = 768; FocusX = 0.46; FocusY = 0.36; Zoom = 1.12 }
     @{ Token = '______-dc7e7c65'; Out = 'program-02.webp'; W = 1024; H = 768; FocusX = 0.48; FocusY = 0.38; Zoom = 1.10 }
     @{ Token = '_______-ec3dff90'; Out = 'program-03.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.40; Zoom = 1.10 }
     @{ Token = '__________2_-72eca'; Out = 'program-04.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.38; Zoom = 1.08 }
-    @{ Token = 'images_15-6c7479f6'; Out = 'trainer-profile.webp'; W = 1024; H = 824; FocusX = 0.50; FocusY = 0.52; Zoom = 0.80 }
+    @{ Token = 'images_15-6c7479f6'; Out = 'trainer-profile.webp'; W = 768; H = 960; FocusX = 0.68; FocusY = 0.38; Zoom = 1.60 }
     @{ Token = '___-793792f0'; Out = 'storefront.webp'; W = 800; H = 1000; FocusX = 0.50; FocusY = 0.52; Zoom = 1.0 }
 )
 
 $sectionOnlyJobs = @(
-    @{ Token = '___-b8bcd262'; Out = 'equipment.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.48; Zoom = 1.0 }
-    @{ Token = '____-33cf4818'; Out = 'studio-02.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.46; Zoom = 1.0 }
-    @{ Token = 'images_15-6c7479f6'; Out = 'trainer-profile.webp'; W = 1024; H = 824; FocusX = 0.50; FocusY = 0.52; Zoom = 0.80 }
+    @{ Token = '___-b8bcd262'; Out = 'equipment.webp'; W = 768; H = 960; FocusX = 0.50; FocusY = 0.48; Zoom = 1.0 }
+    @{ Token = '____-c0fa8665'; Out = 'studio-02.webp'; W = 768; H = 960; FocusX = 0.50; FocusY = 0.50; Zoom = 1.0 }
+    @{ Token = 'images_15-6c7479f6'; Out = 'trainer-profile.webp'; W = 768; H = 960; FocusX = 0.68; FocusY = 0.38; Zoom = 1.60 }
     @{ Token = '___-793792f0'; Out = 'storefront.webp'; W = 800; H = 1000; FocusX = 0.50; FocusY = 0.52; Zoom = 1.0 }
 )
 
-$jobs = if ($SectionOnly) { $sectionOnlyJobs } else { $allJobs }
-
-foreach ($job in $jobs) { Export-Photo $job }
+if ($SectionOnly) {
+    foreach ($job in $sectionOnlyJobs) { Export-Photo $job }
+} else {
+    foreach ($job in $allJobs) { Export-Photo $job }
+}
 
 Write-Host 'Done'
