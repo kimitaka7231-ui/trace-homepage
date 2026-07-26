@@ -840,7 +840,21 @@ ol { list-style: none; }
   .photo__img--equipment { object-position: 50% 46%; }
   .photo__img--equipment-alt { object-position: 50% 42%; }
   .photo__img--trainer { object-position: 50% 40%; }
-  .photo__img--storefront { object-position: 50% 48%; }
+  .photo__img--storefront { object-position: center center; }
+
+  .access__photo.photo--standard {
+    aspect-ratio: auto;
+    background-color: #0a0a0a;
+  }
+
+  .access__photo .photo__img--storefront {
+    object-fit: contain;
+    object-position: center center;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    background-color: #0a0a0a;
+  }
 
   .btn {
     min-height: 3rem;
@@ -2546,6 +2560,38 @@ ol { list-style: none; }
 
 .hero__scroll-label {
   letter-spacing: 0.16em;
+}
+
+/* モバイルFV：CTAカードを下げ、人物の顔と重ならないようにする */
+@media (max-width: 767px) {
+  .hero {
+    justify-content: flex-start;
+    padding-top: calc(var(--header-height) + var(--safe-top) + clamp(9.5rem, 24vh, 11rem));
+    padding-bottom: calc(5rem + var(--safe-bottom));
+  }
+
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .hero__lead {
+    margin-bottom: 0;
+  }
+
+  .hero__reserve {
+    margin-top: auto;
+    width: 100%;
+    max-width: 20rem;
+    padding-top: 0.25rem;
+  }
+
+  .hero__scroll {
+    bottom: calc(1.25rem + var(--safe-bottom));
+  }
 }
 
 @media (min-width: 768px) {
