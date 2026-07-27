@@ -3486,3 +3486,50 @@ button:focus-visible {
 .footer__link:focus-visible {
   outline-offset: 2px;
 }
+
+/* ========================================
+   最終品質 v6（2026-07-27）
+   営業時間表示・320px対応・タイポ統一
+   ======================================== */
+
+.access__hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.access__hours-row {
+  display: block;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 359px) {
+  :root {
+    --container-padding: 1.125rem;
+  }
+
+  .access__item {
+    grid-template-columns: 4.75rem 1fr;
+    gap: 0.625rem;
+  }
+
+  .section-title--concept {
+    max-width: 14.5em;
+  }
+}
+
+.section-title,
+.section-title--concept .section-title__line {
+  text-wrap: balance;
+}
+
+html {
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn:active {
+    transition-duration: 0.12s;
+  }
+}

@@ -3,6 +3,7 @@ $root = Split-Path -Parent $PSScriptRoot
 
 $requiredFiles = @(
   'index.html',
+  '404.html',
   'style.css',
   'script.js',
   'CNAME',
@@ -28,8 +29,8 @@ $checks = @(
   'faq__footer',
   'faq-item__icon',
   'href="#faq"',
-  'style.css?v=202607273',
-  'script.js?v=202607273',
+  'style.css?v=202607274',
+  'script.js?v=202607274',
   'id="faq-q9"',
   'id="faq-a9"'
 )
