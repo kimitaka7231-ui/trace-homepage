@@ -6,6 +6,8 @@ $requiredFiles = @(
   'style.css',
   'script.js',
   'CNAME',
+  'robots.txt',
+  'sitemap.xml',
   'assets/img/hero-gym.png',
   'assets/icons/icon-line.svg'
 )
@@ -24,11 +26,10 @@ $checks = @(
   'id="faq"',
   'class="faq-section"',
   'faq__footer',
-  'faq__cta',
   'faq-item__icon',
   'href="#faq"',
-  'style.css?v=202607262',
-  'script.js?v=20260708',
+  'style.css?v=202607273',
+  'script.js?v=202607273',
   'id="faq-q9"',
   'id="faq-a9"'
 )

@@ -237,7 +237,6 @@ ol { list-style: none; }
 
 .btn:focus-visible,
 .nav__link:focus-visible,
-.float-line:focus-visible,
 .faq-item__trigger:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
@@ -3394,4 +3393,96 @@ ol { list-style: none; }
   .access__map {
     height: 364px;
   }
+}
+
+/* ========================================
+   完成度微調整 v5（2026-07-27）
+   余白統一・タイポ・CTA・パフォーマンス
+   ======================================== */
+
+@media (max-width: 639px) {
+  :root {
+    --section-pad: clamp(3.25rem, 8vw, 4.75rem);
+    --container-padding: 1.375rem;
+    --card-gap: 1rem;
+  }
+
+  body {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .section-title {
+    font-size: clamp(1.9375rem, 5.8vw, 2.25rem);
+    line-height: 1.34;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-desc,
+  .section-body {
+    font-size: 0.9375rem;
+    line-height: 1.92;
+  }
+
+  .section-header {
+    margin-bottom: clamp(2rem, 5vw, 2.75rem);
+  }
+
+  .feature__grid,
+  .voice__grid,
+  .program__grid,
+  .equipment__grid,
+  .price__grid,
+  .result__grid {
+    gap: var(--card-gap);
+  }
+
+  .section-cta {
+    margin-top: clamp(2.25rem, 5vw, 3rem);
+    padding-top: 0.625rem;
+  }
+}
+
+/* CTA：親指タップ最適化 */
+@media (max-width: 767px) {
+  .btn--lg,
+  .hero__cta .btn--hero-cta,
+  .section-cta .btn--lg,
+  .cta__btn {
+    min-height: 3.625rem;
+    padding: 1.125rem 1.75rem;
+    font-size: 0.9375rem;
+  }
+
+  .cta__inner {
+    padding: clamp(2.25rem, 6vw, 2.75rem) clamp(1.25rem, 4vw, 1.5rem);
+  }
+
+  .cta__btn {
+    width: 100%;
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+}
+
+/* 画像CLS：result PNG */
+.photo--result .photo__img {
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+}
+
+.photo--price .photo__img {
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+}
+
+/* アクセシビリティ：フォーカス視認性 */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.footer__link:focus-visible {
+  outline-offset: 2px;
 }
