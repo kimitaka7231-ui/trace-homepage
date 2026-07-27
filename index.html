@@ -42,12 +42,20 @@
       "addressRegion": "佐賀県",
       "addressCountry": "JP"
     },
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Wednesday","Thursday","Friday","Saturday"],
-      "opens": "10:00",
-      "closes": "22:00"
-    }],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "10:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "18:00"
+      }
+    ],
     "priceRange": "¥¥"
   }
   </script>
@@ -619,11 +627,11 @@
               </div>
               <div class="access__item">
                 <dt>営業時間</dt>
-                <dd>10:00〜22:00</dd>
+                <dd>月〜土　10:00〜22:00<br>日曜日　10:00〜18:00</dd>
               </div>
               <div class="access__item">
                 <dt>定休日</dt>
-                <dd>火曜・日曜</dd>
+                <dd>火曜日</dd>
               </div>
               <div class="access__item">
                 <dt>予約</dt>
