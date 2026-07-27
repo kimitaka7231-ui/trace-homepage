@@ -3207,3 +3207,191 @@ ol { list-style: none; }
 .btn__icon {
   display: block;
 }
+
+/* ========================================
+   スマホ最終調整 v4（2026-07-27）
+   LINE導線整理・可読性・視認性
+   ======================================== */
+
+/* ヘッダー：予約ボタン削除後のレイアウト */
+.header__inner {
+  grid-template-columns: 1fr auto;
+}
+
+/* float-line削除：余白調整 */
+@media (max-width: 639px) {
+  body {
+    padding-bottom: calc(var(--safe-bottom) + 0.5rem);
+  }
+
+  .footer {
+    padding-bottom: calc(var(--space-xl) + var(--safe-bottom));
+  }
+}
+
+/* ② キャッチコピー改行固定 */
+.section-title--concept {
+  line-height: 1.42;
+  letter-spacing: 0.06em;
+  max-width: 16em;
+}
+
+.section-title--concept .section-title__line {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .section-title--concept {
+    max-width: none;
+  }
+
+  .section-title--concept .section-title__line {
+    display: inline;
+  }
+}
+
+/* ③ コンセプト可読性 */
+.concept {
+  padding-block: clamp(4.5rem, 10vw, 7rem);
+}
+
+.concept__text .section-body {
+  line-height: 2.05;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 639px) {
+  .concept__text {
+    max-width: 20.5rem;
+    margin-inline: auto;
+  }
+
+  .concept__text .section-body {
+    line-height: 2.1;
+    font-size: 0.9375rem;
+  }
+
+  .concept__text .section-body + .section-body {
+    margin-top: 1.75rem;
+  }
+
+  .concept__grid {
+    gap: clamp(2.75rem, 6.5vw, 3.75rem);
+  }
+}
+
+/* ④ プログラムカード微調整 */
+@media (max-width: 767px) {
+  .program__grid {
+    gap: 1.125rem;
+  }
+
+  .program-card {
+    border-radius: 14px;
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .program-card__visual .photo__img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .program-card__title {
+    margin-bottom: 0.75rem;
+    padding-top: 0.125rem;
+  }
+
+  .program-card__desc {
+    line-height: 1.92;
+    padding-bottom: 1.375rem;
+  }
+
+  .program-card__tag,
+  .program-card__title,
+  .program-card__desc {
+    margin-inline: 1.25rem;
+  }
+
+  .program-card__tag {
+    margin-top: 1.25rem;
+  }
+}
+
+/* ⑤ 料金プラン時間表示 */
+.price-card__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.625rem;
+}
+
+.price-card__duration {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  margin-right: 0.125rem;
+  vertical-align: baseline;
+}
+
+.price-card--featured .price-card__duration {
+  font-size: 1.5rem;
+}
+
+.price-card__name {
+  margin-bottom: 0.875rem;
+}
+
+.price-card__amount {
+  margin-bottom: 0.375rem;
+}
+
+.price__details summary {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 639px) {
+  .price-card__duration {
+    font-size: 1.3125rem;
+  }
+
+  .price-card--featured .price-card__duration {
+    font-size: 1.4375rem;
+  }
+
+  .price-card__amount {
+    font-size: 1.875rem;
+  }
+}
+
+/* ⑥ 最終CTA */
+.cta__reassure {
+  margin-bottom: 1.5rem;
+  font-size: clamp(0.875rem, 3.2vw, 0.9375rem);
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.cta__text {
+  margin-bottom: 1rem;
+}
+
+.cta__btn {
+  margin-top: 0.25rem;
+}
+
+/* ⑦ Googleマップ */
+.access__map {
+  height: 286px;
+}
+
+@media (min-width: 768px) {
+  .access__map {
+    height: 364px;
+  }
+}
