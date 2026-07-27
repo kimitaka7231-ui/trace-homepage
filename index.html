@@ -21,7 +21,7 @@
   <title>パーソナルジム TRACE | 佐賀市神野西 — 続けられる人を作る</title>
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preload" href="assets/img/hero-gym.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="style.css?v=202607270">
+  <link rel="stylesheet" href="style.css?v=202607271">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -104,9 +104,9 @@
             <span class="hero__trial-tax">（税込）</span>
           </p>
           <div class="hero__cta">
-            <a class="btn btn--line btn--lg btn--block js-line-reserve" href="https://lin.ee/Y4Hz0uT" target="_blank" rel="noopener noreferrer">
-              <img class="btn__icon" src="assets/icons/icon-line.svg" width="22" height="22" alt="" aria-hidden="true">
-              <span>LINE予約</span>
+            <a class="btn btn--line btn--lg btn--block btn--hero-cta js-line-reserve" href="https://lin.ee/Y4Hz0uT" target="_blank" rel="noopener noreferrer">
+              <img class="btn__icon" src="assets/icons/icon-line.svg" width="24" height="24" alt="" aria-hidden="true">
+              <span>体験予約</span>
             </a>
           </div>
         </div>
@@ -269,18 +269,39 @@
           <div class="trainer-card__body">
             <p class="trainer-card__role">代表トレーナー</p>
             <h3 class="trainer-card__name">TRACE トレーナー</h3>
-            <ul class="trainer-card__stats">
+            <ul class="trainer-card__highlights" aria-label="トレーナープロフィール">
+              <li class="trainer-highlight">
+                <span class="trainer-highlight__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3h8l1 2h2a1 1 0 011 1v10a2 2 0 01-2 2H4a2 2 0 01-2-2V6a1 1 0 011-1h2l1-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="trainer-highlight__body">
+                  <span class="trainer-highlight__label">資格</span>
+                  <span class="trainer-highlight__value">NSCA-CPT 取得経験あり</span>
+                </div>
+              </li>
+              <li class="trainer-highlight">
+                <span class="trainer-highlight__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/><path d="M10 6v4.5l3 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="trainer-highlight__body">
+                  <span class="trainer-highlight__label">トレーナー歴</span>
+                  <span class="trainer-highlight__value">3年</span>
+                </div>
+              </li>
+              <li class="trainer-highlight">
+                <span class="trainer-highlight__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L2.8 8.2l5-.7L10 3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="trainer-highlight__body">
+                  <span class="trainer-highlight__label">得意分野</span>
+                  <span class="trainer-highlight__value">ボディメイク · ダイエット · 姿勢改善</span>
+                </div>
+              </li>
+            </ul>
+            <ul class="trainer-card__stats trainer-card__stats--compact">
               <li>
                 <span class="trainer-card__stat-value">23歳</span>
                 <span class="trainer-card__stat-label">年齢</span>
-              </li>
-              <li>
-                <span class="trainer-card__stat-value">3年</span>
-                <span class="trainer-card__stat-label">トレーナー歴</span>
-              </li>
-              <li>
-                <span class="trainer-card__stat-value">NSCA-CPT</span>
-                <span class="trainer-card__stat-label">取得経験あり</span>
               </li>
               <li>
                 <span class="trainer-card__stat-value">9年</span>
@@ -288,11 +309,6 @@
               </li>
             </ul>
             <p class="trainer-card__bio">続けられる身体づくりを、マンツーマンでサポートします。初めての方も、再開したい方も、今の体力から一緒に始めましょう。</p>
-            <ul class="trainer-card__tags">
-              <li>ボディメイク</li>
-              <li>ダイエット</li>
-              <li>姿勢改善</li>
-            </ul>
           </div>
         </article>
         <div class="section-cta reveal">
@@ -331,10 +347,11 @@
             </div>
           </article>
         </div>
-        <div class="section-cta reveal">
-          <a class="btn btn--line btn--lg js-line-reserve" href="https://lin.ee/Y4Hz0uT" target="_blank" rel="noopener noreferrer">
-            <img class="btn__icon" src="assets/icons/icon-line.svg" width="20" height="20" alt="" aria-hidden="true">
-            <span>公式LINEで予約する</span>
+        <div class="mid-cta reveal">
+          <p class="mid-cta__lead">続けられる身体づくり、まずは体験から。</p>
+          <a class="btn btn--line btn--lg btn--block mid-cta__btn js-line-reserve" href="https://lin.ee/Y4Hz0uT" target="_blank" rel="noopener noreferrer">
+            <img class="btn__icon" src="assets/icons/icon-line.svg" width="22" height="22" alt="" aria-hidden="true">
+            <span>まずは体験予約はこちら</span>
           </a>
         </div>
       </div>
@@ -718,11 +735,11 @@
     </div>
   </footer>
 
-  <a class="float-line js-line-reserve" id="floatLine" href="https://lin.ee/Y4Hz0uT" target="_blank" rel="noopener noreferrer" aria-label="公式LINEで予約する">
-    <img class="float-line__icon" src="assets/icons/icon-line.svg" width="24" height="24" alt="" aria-hidden="true">
-    <span class="float-line__text">予約</span>
+  <a class="float-line js-line-reserve" id="floatLine" href="https://lin.ee/Y4Hz0uT" target="_blank" rel="noopener noreferrer" aria-label="公式LINEで体験予約する">
+    <img class="float-line__icon" src="assets/icons/icon-line.svg" width="26" height="26" alt="" aria-hidden="true">
+    <span class="float-line__text">体験予約</span>
   </a>
 
-  <script src="script.js?v=20260708" defer></script>
+  <script src="script.js?v=202607271" defer></script>
 </body>
 </html>
