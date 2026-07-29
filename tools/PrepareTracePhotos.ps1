@@ -148,7 +148,7 @@ function Export-Photo($job) {
 }
 
 $allJobs = @(
-    @{ Token = 'inbody_______1_'; Out = 'hero-gym.webp'; W = 1024; H = 768; FocusX = 0.52; FocusY = 0.48; Zoom = 1.08 }
+    @{ Token = '________-9e1f7398'; Out = 'hero-gym.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.44; Zoom = 1.0 }
     @{ Token = '________-76834'; Out = 'interior.webp'; W = 1024; H = 768; FocusX = 0.50; FocusY = 0.42; Zoom = 1.10 }
     @{ Token = '___-b8bcd262'; Out = 'equipment.webp'; W = 768; H = 960; FocusX = 0.50; FocusY = 0.48; Zoom = 1.0 }
     @{ Token = '____-c0fa8665'; Out = 'studio-02.webp'; W = 768; H = 960; FocusX = 0.50; FocusY = 0.50; Zoom = 1.0 }

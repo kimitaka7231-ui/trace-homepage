@@ -769,8 +769,8 @@ ol { list-style: none; }
 }
 
 .photo--hero .photo__img {
-  object-position: 46% 28%;
-  transform: scale(1.06);
+  object-position: 50% 42%;
+  transform: scale(1.04);
   filter: brightness(0.98) contrast(1.04) saturate(0.94);
 }
 
@@ -832,7 +832,7 @@ ol { list-style: none; }
 
 @media (max-width: 767px) {
   .photo--hero .photo__img {
-    object-position: 68% 4%;
+    object-position: 50% 46%;
     transform: scale(1);
   }
 
@@ -2328,7 +2328,7 @@ ol { list-style: none; }
   }
 
   .photo--hero .photo__img {
-    object-position: 46% 28%;
+    object-position: 50% 42%;
   }
 
   .hero {
