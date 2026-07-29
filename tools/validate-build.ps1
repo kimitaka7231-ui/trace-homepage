@@ -29,9 +29,10 @@ $checks = @(
   'faq__footer',
   'faq-item__icon',
   'href="#faq"',
-  'style.css?v=202607281',
-  'script.js?v=202607281',
+  'style.css?v=202607282',
+  'script.js?v=202607282',
   'hero-gym.webp?v=202607281',
+  'interior.webp?v=202607282',
   'id="faq-q9"',
   'id="faq-a9"'
 )

@@ -820,7 +820,7 @@ ol { list-style: none; }
   background-color: #f5f5f5;
 }
 
-.photo__img--interior { object-position: 50% 38%; }
+.photo__img--interior { object-position: 50% 44%; }
 .photo__img--trainer { object-position: 50% 40%; }
 .photo__img--equipment { object-position: 50% 48%; }
 .photo__img--equipment-alt { object-position: 50% 44%; }
@@ -836,7 +836,7 @@ ol { list-style: none; }
     transform: scale(1);
   }
 
-  .photo__img--interior { object-position: 50% 36%; }
+  .photo__img--interior { object-position: 50% 42%; }
   .photo__img--equipment { object-position: 50% 46%; }
   .photo__img--equipment-alt { object-position: 50% 42%; }
   .photo__img--trainer { object-position: 50% 40%; }
