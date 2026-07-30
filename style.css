@@ -830,20 +830,20 @@ ol { list-style: none; }
 .photo__img--program-04 { object-position: 48% 40%; }
 .photo__img--storefront { object-position: 54% 46%; }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .photo--hero .photo__img {
-    object-position: 60% 34%;
+    object-position: 68% 34%;
     transform: scale(1);
   }
 
-  .photo__img--interior { object-position: 48% 34%; }
-  .photo__img--equipment { object-position: 52% 40%; }
-  .photo__img--equipment-alt { object-position: 66% 34%; }
-  .photo__img--trainer { object-position: 54% 34%; }
-  .photo__img--program-01 { object-position: 52% 46%; }
-  .photo__img--program-02 { object-position: 50% 42%; }
-  .photo__img--program-03 { object-position: 56% 44%; }
-  .photo__img--program-04 { object-position: 48% 44%; }
+  .photo__img--interior { object-position: 50% 40%; }
+  .photo__img--equipment { object-position: 52% 44%; }
+  .photo__img--equipment-alt { object-position: 58% 40%; }
+  .photo__img--trainer { object-position: 50% 36%; }
+  .photo__img--program-01 { object-position: 50% 48%; }
+  .photo__img--program-02 { object-position: 48% 40%; }
+  .photo__img--program-03 { object-position: 54% 46%; }
+  .photo__img--program-04 { object-position: 50% 46%; }
   .photo__img--storefront { object-position: 50% 48%; }
 
   .access__photo.photo--standard {
@@ -853,7 +853,7 @@ ol { list-style: none; }
 
   .access__photo .photo__img--storefront {
     object-fit: contain;
-    object-position: center center;
+    object-position: 50% 48%;
     width: 100%;
     height: auto;
     aspect-ratio: auto;
@@ -2447,9 +2447,9 @@ ol { list-style: none; }
   filter: brightness(0.9) contrast(1.06) saturate(0.9);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .photo--hero .photo__img {
-    object-position: 60% 34%;
+    object-position: 68% 34%;
     transform: scale(1);
   }
 }
