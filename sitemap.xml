@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://trace-gym.jp/column/</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -21,6 +21,12 @@
   <url>
     <loc>https://trace-gym.jp/column/personal-gym-beginner-guide/</loc>
     <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trace-gym.jp/column/saga-personal-gym-how-to-choose/</loc>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
