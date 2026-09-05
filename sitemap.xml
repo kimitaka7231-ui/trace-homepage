@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://trace-gym.jp/column/</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -27,6 +27,12 @@
   <url>
     <loc>https://trace-gym.jp/column/saga-personal-gym-how-to-choose/</loc>
     <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trace-gym.jp/column/personal-gym-weight-loss-period/</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
