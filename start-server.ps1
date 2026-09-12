@@ -21,6 +21,9 @@ while ($listener.IsListening) {
   if ($path -eq '/') { $path = '/index.html' }
 
   $file = Join-Path $root ($path.TrimStart('/').Replace('/', [IO.Path]::DirectorySeparatorChar))
+  if (Test-Path $file -PathType Container) {
+    $file = Join-Path $file 'index.html'
+  }
 
   if (Test-Path $file -PathType Leaf) {
     $bytes = [IO.File]::ReadAllBytes($file)

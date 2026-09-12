@@ -9,6 +9,8 @@ $requiredFiles = @(
   'CNAME',
   'robots.txt',
   'sitemap.xml',
+  'trial/index.html',
+  'trial/trial.css',
   'assets/img/hero-gym.png',
   'assets/icons/icon-line.svg'
 )
