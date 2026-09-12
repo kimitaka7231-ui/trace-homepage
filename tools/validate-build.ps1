@@ -11,6 +11,8 @@ $requiredFiles = @(
   'sitemap.xml',
   'trial/index.html',
   'trial/trial.css',
+  'visit/index.html',
+  'visit/visit.css',
   'assets/img/hero-gym.png',
   'assets/icons/icon-line.svg'
 )

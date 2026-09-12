@@ -1,0 +1,6 @@
+.visit-page .hero-picture img{object-position:center 48%}
+.visit-page .hero-copy h1>span{font-size:clamp(1.85rem,7.5vw,3.3rem)}
+.visit-page .hero-offer .visit-offer{font-size:1.5rem;letter-spacing:.03em}
+.visit-page .visit-price{font-size:clamp(1.7rem,5vw,2.7rem);letter-spacing:.02em}
+.visit-page .visit-trial-link{margin:0 0 24px}
+@media(min-width:760px){.visit-page .hero-picture{width:60%}.visit-page .hero-picture img{object-position:center 60%}.visit-page .hero-copy{width:65%}.visit-page .experience-photo{aspect-ratio:4/3;max-height:460px}}
