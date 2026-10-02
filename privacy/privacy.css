@@ -1,0 +1,13 @@
+.article h1{overflow-wrap:anywhere}
+.article-body a,.column-footer a{text-decoration:underline;text-underline-offset:4px}
+.article-body a{color:var(--accent)}
+.article-body section{scroll-margin-top:80px}
+.privacy-contact{display:grid;grid-template-columns:6rem minmax(0,1fr);gap:1rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:10px}
+.privacy-contact dt{color:var(--muted)}
+.privacy-contact dd{overflow-wrap:anywhere}
+.column-footer p{margin-top:1rem}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.skip-link{position:fixed;top:8px;left:8px;z-index:20;padding:8px 16px;background:var(--accent);color:var(--bg);transform:translateY(-150%)}
+.skip-link:focus{transform:translateY(0)}
+@media(max-width:400px){.privacy-contact{grid-template-columns:1fr;gap:.4rem}.privacy-contact dd{margin-bottom:1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
