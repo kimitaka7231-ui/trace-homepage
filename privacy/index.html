@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM9FG3S8BY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZM9FG3S8BY', {allow_google_signals: false, allow_ad_personalization_signals: false});
+    document.addEventListener('click', function(event) {
+      var link = event.target.closest && event.target.closest('a[href]');
+      if (!link) return;
+      var url = new URL(link.href, location.href);
+      if (url.hostname === 'lin.ee' || url.hostname === 'line.me' || url.hostname.endsWith('.line.me')) gtag('event', 'line_click');
+      else if (url.origin === location.origin && /^\/trial\/?$/.test(url.pathname)) gtag('event', 'trial_click');
+      else if (url.origin === location.origin && /^\/visit\/?$/.test(url.pathname)) gtag('event', 'visit_click');
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
@@ -40,7 +57,7 @@
       </section>
       <section><h2>6. 外部サービスの利用</h2>
         <p>公式LINE、Metaのリード広告フォームなどの外部サービス上で入力・送信される情報は、当店が取得する情報の取り扱いに加え、各サービス提供者のプライバシーポリシー等も適用されます。送信前に、各サービスの案内をご確認ください。</p>
-        <p>当サイトにはGoogleマップを埋め込んでいます。外部コンテンツの読み込み時に、IPアドレス等の接続情報が提供者へ送信される場合があります。</p>
+        <p>当サイトにはGoogleマップを埋め込んでいます。外部コンテンツの読み込み時に、IPアドレス等の接続情報が提供者へ送信される場合があります。</p><p>当サイトでは、利用状況の把握とサイト改善のため、Google Analytics 4を使用します。Cookie等を用いて閲覧ページ、アクセス元、リンクのクリック等の情報がGoogleに送信される場合があります。広告向けパーソナライズは無効に設定しています。詳細は<a href="https://policies.google.com/technologies/partner-sites?hl=ja">Googleによるデータ利用</a>をご確認ください。計測を拒否するには、ブラウザのCookie設定や<a href="https://tools.google.com/dlpage/gaoptout?hl=ja">Google Analyticsオプトアウトアドオン</a>をご利用いただけます。</p>
       </section>
       <section><h2>7. 開示・訂正・利用停止等</h2>
         <p>当店が保有する個人データについて、利用目的の通知、開示、訂正・追加・削除、利用停止・消去、第三者提供の停止、第三者提供記録の開示を希望される場合は、下記窓口へご連絡ください。ご本人であることを必要な範囲で確認したうえで、法令に従って対応します。ご請求に応じられない場合は、その理由をご説明します。</p>
