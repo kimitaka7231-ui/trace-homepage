@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM9FG3S8BY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZM9FG3S8BY', {allow_google_signals: false, allow_ad_personalization_signals: false});
+    document.addEventListener('click', function(event) {
+      var link = event.target.closest && event.target.closest('a[href]');
+      if (!link) return;
+      var url = new URL(link.href, location.href);
+      if (url.hostname === 'lin.ee' || url.hostname === 'line.me' || url.hostname.endsWith('.line.me')) gtag('event', 'line_click');
+      else if (url.origin === location.origin && /^\/trial\/?$/.test(url.pathname)) gtag('event', 'trial_click');
+      else if (url.origin === location.origin && /^\/visit\/?$/.test(url.pathname)) gtag('event', 'visit_click');
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="佐賀市でダイエット目的のパーソナルジムを検討している方へ。何ヶ月で痩せる？1ヶ月・3ヶ月で期待できる変化と個人差、運動・食事の進め方をTRACEが解説します。">
